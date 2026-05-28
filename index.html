@@ -922,12 +922,149 @@ body{
     padding-bottom:78px;
   }
 }
+
+  .site-header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  background:rgba(2,11,26,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(147,197,253,.14);
+}
+
+.nav-wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.logo{
+  font-size:24px;
+  line-height:1;
+  font-weight:700;
+  color:#fff;
+  white-space:nowrap;
+}
+
+.logo span{
+  color:#60a5fa;
+}
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.main-nav a{
+  font-size:15px;
+  font-weight:700;
+  color:#dbeafe;
+}
+
+.main-nav a:hover{
+  color:#60a5fa;
+}
+
+.header-btn,
+.mobile-header-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  font-size:15px;
+  font-weight:700;
+  box-shadow:0 10px 24px rgba(37,99,235,.24);
+}
+
+.mobile-toggle{
+  display:none;
+  background:none;
+  border:1px solid rgba(147,197,253,.25);
+  color:#fff;
+  padding:9px 13px;
+  border-radius:10px;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  display:none;
+  background:#020b1a;
+  border-top:1px solid rgba(147,197,253,.14);
+  padding:16px 20px;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:11px 0;
+  color:#dbeafe;
+  font-weight:700;
+}
+
+.mobile-menu.show{
+  display:block;
+}
+
+.mobile-header-btn{
+  margin-top:10px;
+  width:100%;
+}
+
+@media(max-width:900px){
+  .main-nav,
+  .header-btn{
+    display:none;
+  }
+
+  .mobile-toggle{
+    display:block;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+}
 </style>
 
 <script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=6a18175878fd9dcc1b63026c"></script>
 </head>
 
 <body>
+
+   <header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo"><img src="logo.png" alt="logo" style="width: 195px;"></a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+
+    <a href="https://inpmz.ttrk.io/click" class="header-btn" style="padding: 12px 20px;">Explore Options →</a>
+
+    <button class="mobile-toggle" id="mobileToggle">☰</button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://inpmz.ttrk.io/click" class="mobile-header-btn">Explore Options →</a>
+  </div>
+</header>
 
 <section class="hero">
   <div class="hero-wrap">
@@ -961,7 +1098,7 @@ body{
       </div>
 
       <div class="hero-actions">
-        <a href="#https://inpmz.ttrk.io/click" class="btn btn-primary">SHOP NOW →</a>
+        <a href="https://inpmz.ttrk.io/click" class="btn btn-primary">SHOP NOW →</a>
         <a href="https://inpmz.ttrk.io/click" class="btn btn-outline">LEARN MORE</a>
       </div>
 
@@ -1316,6 +1453,12 @@ body{
 As an Associate and affiliate for other programs, we earn from qualifying purchases. Affiliate relationships are disclosed in accordance with the Federal Trade Commission’s 16 CFR, Part 255.
   </p>
 </footer>
+
+  <script>
+document.getElementById("mobileToggle").addEventListener("click", function(){
+  document.getElementById("mobileMenu").classList.toggle("show");
+});
+</script>
 
 </body>
 </html>
