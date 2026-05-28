@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | Hair Wellness Formula</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#020b1a;
+  color:#ffffff;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}
+.section{padding:20px 0}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:999;
+  background:rgba(2,11,26,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(147,197,253,.14);
+}
+.nav-wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.logo{
+  font-size:24px;
+  line-height:1;
+  font-weight:700;
+  color:#fff;
+}
+.logo span{color:#60a5fa}
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+.main-nav a{
+  font-size:15px;
+  font-weight:700;
+  color:#dbeafe;
+}
+.main-nav a:hover{color:#60a5fa}
+.header-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 22px;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(135deg,#38bdf8,#2563eb);
+  font-size:15px;
+  font-weight:700;
+  box-shadow:0 10px 24px rgba(37,99,235,.24);
+}
+.mobile-toggle{display:none}
+.page-hero{
+  background:
+  radial-gradient(circle at right center,rgba(59,130,246,.28),transparent 38%),
+  linear-gradient(135deg,#020b1a 0%,#041d3d 55%,#062b5f 100%);
+  padding:42px 0;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:48px;
+  align-items:center;
+}
+.hero-tag{
+  display:inline-flex;
+  padding:10px 20px;
+  border-radius:40px;
+  border:1px solid rgba(147,197,253,.35);
+  color:#dbeafe;
+  font-size:15px;
+  font-weight:700;
+  margin-bottom:24px;
+  background:rgba(255,255,255,.04);
+}
+.page-hero h1{
+  font-size:52px;
+  line-height:1.06;
+  font-weight:700;
+  margin-bottom:20px;
+}
+.page-hero h1 span{color:#60a5fa}
+.page-hero p{
+  font-size:18px;
+  line-height:1.7;
+  font-weight:600;
+  color:#dbeafe;
+  max-width:650px;
+}
+.hero-img{
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(147,197,253,.2);
+  box-shadow:0 24px 70px rgba(0,0,0,.32);
+}
+.hero-img img{
+  width:100%;
+  height:430px;
+  object-fit:cover;
+}
+.light{
+  background:#f8fbff;
+  color:#06152c;
+}
+.soft{
+  background:#f3f8ff;
+  color:#06152c;
+}
+.dark{
+  background:linear-gradient(135deg,#020b1a,#041d3d);
+  color:#fff;
+}
+.section-label{
+  color:#2563eb;
+  font-size:18px;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:10px;
+}
+.dark .section-label{color:#93c5fd}
+.section-title{
+  text-align:center;
+  font-size:38px;
+  line-height:1.18;
+  font-weight:700;
+  margin-bottom:18px;
+}
+.section-desc{
+  max-width:820px;
+  margin:0 auto 38px;
+  text-align:center;
+  color:#1f2f46;
+  font-size:17px;
+  line-height:1.65;
+  font-weight:600;
+}
+.dark .section-desc{color:#dbeafe}
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.info-card{
+  background:#fff;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 12px 32px rgba(37,99,235,.10);
+}
+.info-card.dark-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(147,197,253,.15);
+}
+.info-card .icon{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#eaf3ff;
+  color:#2563eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin-bottom:20px;
+}
+.info-card h3{
+  font-size:21px;
+  color:#0a3184;
+  margin-bottom:12px;
+}
+.info-card.dark-card h3{color:#fff}
+.info-card p{
+  font-size:15.5px;
+  line-height:1.65;
+  color:#1f2f46;
+  font-weight:600;
+}
+.info-card.dark-card p{color:#dbeafe}
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:42px;
+  align-items:center;
+}
+.split-img{
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(37,99,235,.16);
+}
+.split-img img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+.content-box h2{
+  font-size:38px;
+  line-height:1.2;
+  margin-bottom:18px;
+}
+.content-box p{
+  font-size:17px;
+  line-height:1.75;
+  color:#1f2f46;
+  font-weight:600;
+  margin-bottom:18px;
+}
+.check-list{
+  display:grid;
+  gap:14px;
+  margin-top:22px;
+}
+.check-list li{
+  list-style:none;
+  display:flex;
+  gap:12px;
+  color:#06152c;
+  font-weight:700;
+}
+.check-list li:before{
+  content:"✓";
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#2563eb;
+  color:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+.faq-wrap{
+  max-width:900px;
+  margin:0 auto;
+  display:grid;
+  gap:16px;
+}
+.faq-item{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(37,99,235,.08);
+}
+.faq-item details{padding:0}
+.faq-item summary{
+  cursor:pointer;
+  list-style:none;
+  padding:22px 26px;
+  color:#0a3184;
+  font-size:18px;
+  font-weight:700;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:after{
+  content:"+";
+  color:#2563eb;
+  font-size:24px;
+}
+.faq-item details[open] summary:after{content:"−"}
+.faq-answer{
+  padding:0 26px 24px;
+  color:#1f2f46;
+  font-size:16px;
+  line-height:1.7;
+  font-weight:600;
+}
+.legal-content{
+  max-width:940px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:22px;
+  padding:42px;
+  box-shadow:0 14px 36px rgba(37,99,235,.10);
+}
+.legal-content h2{
+  color:#0a3184;
+  font-size:26px;
+  margin:30px 0 12px;
+}
+.legal-content h2:first-child{margin-top:0}
+.legal-content p,.legal-content li{
+  color:#1f2f46;
+  font-size:16px;
+  line-height:1.75;
+  font-weight:600;
+  margin-bottom:14px;
+}
+.legal-content ul{padding-left:22px;margin-bottom:18px}
+.cta{
+  background:linear-gradient(135deg,#020b1a,#062b5f);
+  padding:58px 20px;
+}
+.cta-wrap{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:30px;
+  align-items:center;
+}
+.cta h2{
+  font-size:38px;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+.cta p{
+  color:#dbeafe;
+  font-size:17px;
+  line-height:1.6;
+  font-weight:600;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 34px;
+  min-width:230px;
+  border-radius:12px;
+  color:#fff;
+  background:linear-gradient(135deg,#60a5fa,#2563eb);
+  font-size:20px;
+  font-weight:700;
+  box-shadow:0 12px 30px rgba(37,99,235,.28);
+}
+.site-footer{
+  background:#f8fbff;
+  color:#06152c;
+  padding:32px 20px;
+  text-align:center;
+}
+.footer-links{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.footer-links a{
+  color:#2563eb;
+  font-size:15px;
+  font-weight:700;
+}
+.footer-copy{
+  max-width:980px;
+  margin:0 auto;
+  color:#1f2f46;
+  font-size:13px;
+  line-height:1.7;
+  font-weight:600;
+}
+.footer-small{
+  margin-top:16px;
+  color:#516078;
+  font-size:13px;
+  font-weight:600;
+}
+@media(max-width:900px){
+  .main-nav{display:none}
+  .mobile-toggle{
+    display:block;
+    background:none;
+    border:1px solid rgba(147,197,253,.25);
+    color:#fff;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:22px;
+  }
+  .hero-grid,.split,.cta-wrap{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
+  .page-hero h1{font-size:38px}
+  .hero-img img,.split-img img{height:320px}
+  .section-title,.content-box h2,.cta h2{font-size:30px}
+}
+@media(max-width:600px){
+  .section{padding:44px 0}
+  .page-hero{padding:54px 0}
+  .page-hero h1{font-size:32px}
+  .page-hero p{font-size:16px}
+  .legal-content{padding:26px 20px}
+  .header-btn{display:none}
+  .btn{width:100%;min-width:100%}
+}
+</style>
+<script type="text/javascript" src="https://inpmz.ttrk.io/track.js?rtkcmpid=6a18175878fd9dcc1b63026c"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">Hair<span>Wellness</span></a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+
+    <a href="https://inpmz.ttrk.io/click" class="header-btn">Shop Now →</a>
+    <button class="mobile-toggle" onclick="document.querySelector('.mobile-menu').classList.toggle('show')">☰</button>
+  </div>
+
+  <div class="mobile-menu" style="display:none;background:#020b1a;border-top:1px solid rgba(147,197,253,.14);padding:16px 20px;">
+    <a style="display:block;padding:10px 0;color:#dbeafe;font-weight:700;" href="index.html">Home</a>
+    <a style="display:block;padding:10px 0;color:#dbeafe;font-weight:700;" href="about.html">About Us</a>
+    <a style="display:block;padding:10px 0;color:#dbeafe;font-weight:700;" href="faq.html">FAQ</a>
+    <a style="display:block;padding:10px 0;color:#dbeafe;font-weight:700;" href="privacy.html">Privacy</a>
+    <a style="display:block;padding:10px 0;color:#dbeafe;font-weight:700;" href="terms.html">Terms</a>
+  </div>
+
+  <script>
+    const style = document.createElement('style');
+    style.innerHTML = '.mobile-menu.show{display:block!important}';
+    document.head.appendChild(style);
+  </script>
+</header>
+
+
+<section class="page-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tag">Questions & Answers</div>
+      <h1>Frequently Asked <span>Questions</span></h1>
+      <p>
+        Find simple answers about Hair Wellness Formula, daily use, expected routine, shipping, ingredients and customer support.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section light">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Everything You Need To Know</h2>
+    <p class="section-desc">
+      These answers are written to help you understand the product before you buy. Individual results can vary based on age, lifestyle, hair condition and consistency of use.
+    </p>
+
+    <div class="faq-wrap">
+      <div class="faq-item"><details open><summary>What is Hair Wellness Formula?</summary><div class="faq-answer">Hair Wellness Formula is a daily wellness support product created to help support stronger, thicker and healthier-looking hair over time.</div></details></div>
+      <div class="faq-item"><details><summary>Who can use this product?</summary><div class="faq-answer">It is designed for adult men and women looking for daily support for weak, thinning, dry or breakage-prone hair. Always review the product label before use.</div></details></div>
+      <div class="faq-item"><details><summary>How long does it take to see results?</summary><div class="faq-answer">Hair wellness routines usually require consistency. Many users follow a 60 to 90 day routine. Results may vary from person to person.</div></details></div>
+      <div class="faq-item"><details><summary>Can this stop hair loss completely?</summary><div class="faq-answer">No product can guarantee complete prevention of hair loss. This product is intended to support healthier-looking hair and scalp wellness as part of a daily routine.</div></details></div>
+      <div class="faq-item"><details><summary>Is it safe for daily use?</summary><div class="faq-answer">The formula is positioned for daily wellness support. If you are pregnant, nursing, taking medication or have a medical condition, consult a healthcare professional before use.</div></details></div>
+      <div class="faq-item"><details><summary>Can I use it with shampoo, oil or serum?</summary><div class="faq-answer">Yes, it can usually be used alongside a normal hair care routine. Avoid combining multiple products if your scalp is sensitive unless advised by a professional.</div></details></div>
+      <div class="faq-item"><details><summary>Is this product only for men?</summary><div class="faq-answer">No. The product is suitable for both men and women who want daily support for healthier-looking hair.</div></details></div>
+      <div class="faq-item"><details><summary>Do you offer refunds?</summary><div class="faq-answer">Refund terms may vary depending on the seller, offer page or checkout partner. Please review the refund information shown at checkout before placing your order.</div></details></div>
+      <div class="faq-item"><details><summary>How long does shipping take?</summary><div class="faq-answer">Shipping timelines depend on your location and the fulfillment partner. Estimated delivery details are usually shown during checkout or in the order confirmation email.</div></details></div>
+      <div class="faq-item"><details><summary>Is this website affiliated with third-party sellers?</summary><div class="faq-answer">Yes. This website may contain affiliate links. We may earn a commission when you purchase through links on this website, at no extra cost to you.</div></details></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-wrap">
+    <div>
+      <h2>Still Thinking About Starting?</h2>
+      <p>Begin your daily hair wellness routine and support stronger, healthier-looking hair over time.</p>
+    </div>
+    <a href="https://inpmz.ttrk.io/click" class="btn">Shop Now →</a>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms & Conditions</a>
+    <a href="faq.html">FAQ</a>
+    <a href="about.html">About Us</a>
+  </div>
+
+  <p class="footer-copy">
+    This website contains affiliate links, which means we may receive a commission if you click a link and purchase something that we have recommended. While clicking these links will not cost you any extra money, it helps us keep this site up and running.
+    As an associate and affiliate for other programs, we earn from qualifying purchases. Affiliate relationships are disclosed in accordance with the Federal Trade Commission’s 16 CFR, Part 255.
+  </p>
+
+  <p class="footer-small">
+    © 2026 Hair Wellness Formula. All Rights Reserved.
+  </p>
+</footer>
+
+</body>
+</html>
